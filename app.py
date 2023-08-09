@@ -13,7 +13,7 @@ def save_uploadedfile(uploadedfile):
 
 if input_image:
     save_uploadedfile(input_image)
-    solve(input_image.name)
+    solve(input_image.name,reverse=False)
 
     col1, col2 = st.columns(2)
     col1.image('edges.png', caption='Segmented blocks', use_column_width=True)
