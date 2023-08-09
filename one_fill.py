@@ -20,7 +20,13 @@ def sort_contours(contours, x_axis_sort, y_axis_sort):
     key=lambda b:b[1][1], reverse=y_reverse))
     # return the list of sorted contours and bounding boxes
     return (contours, boundingBoxes)
+def contour_sort(a, b):
+    br_a = cv2.boundingRect(a)
+    br_b = cv2.boundingRect(b)
 
+    if abs(br_a[1] - br_b[1]) <= 15:
+        return br_a[0] - br_b[0]
+    return br_a[1] - br_b[1]
 def solve_one_fill(grid, start):
     def is_valid_move(x, y):
         return 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] == 1
