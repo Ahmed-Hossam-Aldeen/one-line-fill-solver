@@ -97,5 +97,3 @@ def solve(path):
         plt.imsave('solved.png',cropped_image,cmap='gray')  
     else:
         print("No solution found.")
-
-solve('img3.jpeg')
